@@ -700,18 +700,49 @@ body::after{
 @keyframes fxUp{0%{opacity:0;transform:translateY(6px)}18%{opacity:1}100%{opacity:0;transform:translateY(-30px)}}
 /* ============ 响应式 ============ */
 @media (max-width:640px){
-  .topbar{padding:10px 14px}
-  .brand{font-size:15px;letter-spacing:.2em}
+  /* ===== 手机版整体优化 ===== */
+  .topbar{padding:10px 12px;flex-wrap:wrap;row-gap:6px}
+  .top-actions{gap:6px;flex-wrap:wrap}
+  .icon-btn{font-size:11px;padding:6px 10px;letter-spacing:.06em;white-space:nowrap;min-height:34px}
+  .brand{font-size:15px;letter-spacing:.14em;gap:6px}
   .brand small{display:none}
-  #view-game{padding:88px 12px 24px}
-  .story-box{padding:22px 20px;min-height:auto}
-  .story-text{font-size:15px}
-  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  /* 标题屏：主菜单按钮拇指化 */
+  #view-title{padding:72px 0 30px}
+  .title-main{font-size:clamp(26px,7vw,34px)}
+  .title-sub{font-size:clamp(16px,4.5vw,20px)}
+  .title-desc{font-size:12px;letter-spacing:.2em}
+  .main-menu{width:100%;padding:0 16px;box-sizing:border-box}
+  .menu-btn{width:100%;max-width:400px;min-height:48px;font-size:15px;padding:12px 20px;letter-spacing:.22em}
+  /* 剧情屏 */
+  #view-game{padding:84px 12px 150px}
+  .game-head{gap:8px;margin-bottom:16px}
+  .chapter-tag{font-size:11px;padding:4px 10px}
+  .scene-title{font-size:19px}
+  .story-box{padding:18px 16px;min-height:auto}
+  .story-text{font-size:16px;line-height:1.95}
+  .choices{gap:12px;margin-top:20px}
+  .choice{font-size:16px;padding:15px 16px;min-height:52px;display:flex;flex-direction:column;justify-content:center}
+  .choice .lock-note{font-size:11px}
+  /* 属性栏：两列大格 */
+  .stats-bar{grid-template-columns:repeat(2,1fr);gap:10px;padding:10px 12px;bottom:8px;width:calc(100% - 16px)}
+  .stat{flex-direction:row;align-items:center;gap:8px}
+  .stat-top{flex:1;gap:4px}
+  .stat-name{font-size:12px}
+  .stat-val{font-size:16px}
+  .stat-track{display:none}
+  .love-wrap{gap:8px;padding-top:8px}
+  .love-item{font-size:12px}
+  .love-item b{font-size:14px}
   .ending-stats{grid-template-columns:repeat(2,1fr)}
   .ach-grid{grid-template-columns:1fr}
   .scene-time{display:none}
-  #view-ending{padding:100px 14px 40px}
-  .ending-body{padding:22px 20px}
+  /* 弹窗拇指化 */
+  .modal-panel{padding:20px 16px}
+  .confirm-actions{flex-direction:column;align-items:stretch}
+  .confirm-actions .btn-ghost{min-width:0;width:100%;min-height:44px;font-size:14px}
+  .imprint-card{padding:14px 14px}
+  #view-ending{padding:90px 12px 40px}
+  .ending-body{padding:18px 16px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
